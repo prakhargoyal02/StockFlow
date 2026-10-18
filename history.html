@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movement History | StockFlow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="showMovementHistory(); updateAccessUI();">
+  <div class="appShell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <h2>StockFlow</h2>
+          <p>Inventory System</p>
+        </div>
+      </div>
+
+      <a class="nav" href="index.html">🏠 Dashboard</a>
+      <a class="nav adminOnly" href="add.html">➕ Add Item</a>
+      <a class="nav" href="books.html">📦 Inventory Records</a>
+      <a class="nav adminOnly" href="issue.html">📤 Assign Item</a>
+      <a class="nav adminOnly" href="return.html">📥 Restock Item</a>
+      <a class="nav active" href="history.html">📜 Movement History</a>
+      <a class="nav" href="about.html">ℹ️ About Project</a>
+
+      <div class="sideCard accessCard">
+        <h3 id="roleBox">User Access</h3>
+        <p id="roleText">Checking login...</p>
+        <button class="logoutBtn" onclick="logout()">Logout</button>
+      </div>
+
+      <div class="sideMini">
+        <p>System Status</p>
+        <h3>● Online</h3>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1>Stock Movement History</h1>
+          <p>Review recorded inventory activity and employee returns.</p>
+        </div>
+        <a class="topBtn" href="books.html">View Inventory</a>
+      </div>
+
+      <div class="toolbar">
+        <input id="historySearch"
+               placeholder="Search item, employee, action..."
+               oninput="showMovementHistory()">
+
+        <select id="historyFilter" onchange="showMovementHistory()">
+          <option value="All">All Movements</option>
+          <option value="Added">Added</option>
+          <option value="Assigned">Assigned</option>
+          <option value="Returned">Returned</option>
+          <option value="Restocked">Restocked</option>
+          <option value="Status">Status Changed</option>
+          <option value="Deleted">Deleted</option>
+        </select>
+      </div>
+
+      <div class="tableCard">
+        <table>
+          <thead>
+            <tr>
+              <th>Date & Time</th>
+              <th>Action</th>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Employee / Details</th>
+            </tr>
+          </thead>
+          <tbody id="historyTable"></tbody>
+        </table>
+
+        <p id="historyEmpty" class="empty"></p>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
