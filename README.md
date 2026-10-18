@@ -4,7 +4,7 @@ StockFlow is a web-based inventory management system built using HTML, CSS, and 
 
 ## 🚀 Live Demo
 
-**[Click here to open StockFlow]([https://stockflow-prakhargoyal-0001.netlify.app/login.html])**
+**[Click here to open StockFlow](https://stockflow-prakhargoyal-0001.netlify.app/login.html)**
 
 ## ✨ Features
 
@@ -38,7 +38,7 @@ Use these credentials to explore the demonstration application:
 
 ## 📖 How to Use
 
-1. Open the [live demo](https://fastidious-cranachan-702822.netlify.app/).
+1. Open the [live demo](https://stockflow-prakhargoyal-0001.netlify.app/login.html).
 2. Sign in using the demo credentials above.
 3. Explore the inventory dashboard.
 4. Add inventory items and manage available quantities.
